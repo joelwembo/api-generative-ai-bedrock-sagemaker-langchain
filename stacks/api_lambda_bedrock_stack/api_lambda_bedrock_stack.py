@@ -29,10 +29,10 @@ class ApiLambdaBedrockStack(Stack):
         )
 
         # Create the Lambda function and attach the layer
-        lambda_function = _lambda.Function(self, "MyFunction",
+        lambda_function = _lambda.Function(self, "PythonFunction",
             runtime=_lambda.Runtime.PYTHON_3_10,
             handler="index.handler",
-            code=_lambda.Code.from_asset("./function_code"),
+            code=_lambda.Code.from_asset("./functions"),
             layers=[layer],
             timeout=Duration.seconds(30)
             )
@@ -40,8 +40,10 @@ class ApiLambdaBedrockStack(Stack):
         invoke_model_policy.attach_to_role(lambda_function.role)
 
         #create api gateway
-        api = apigw.RestApi(self, "ServerlessLandGenAI",)
+        api = apigw.RestApi(self, "GenAILangChainProdxCloud",)
 
         #create a new resource
         text_gen_resource = api.root.add_resource("text_gen")
+        text_gen_resource2 = api.root.add_resource("text_ai")
         text_gen_resource.add_method("POST", apigw.LambdaIntegration(lambda_function))
+        text_gen_resource2.add_method("GET", apigw.LambdaIntegration(lambda_function))
