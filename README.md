@@ -62,6 +62,9 @@ You must request access to a model before you can use it. If you try to use the 
     ```
     pip install -r requirements.txt
     ```
+
+!pip install -U boto3 langchain
+!pip install amazon-textract-textractor amazon-textract-prettyprinter pypdf Pillow
 1. Run the command below to bootstrap your account. CDK needs it to deploy
     ```
     cdk bootstrap
@@ -129,5 +132,3 @@ SPDX-License-Identifier: MIT-0
 }
 
 
-!pip install -U boto3 langchain
-!pip install amazon-textract-textractor amazon-textract-prettyprinter pypdf Pillow
