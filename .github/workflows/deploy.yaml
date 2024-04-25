@@ -1,43 +1,47 @@
-# name: AWS Service CI/CD
+name: AWS CDK deploy AI Service API
 
-# on:
-#   push:
-#     branches: ['main', 'master']
-#   pull_request:
-#     branches: ['main', 'master']
+on:
+  push:
+    branches: [master, main, dev/*, feature/*, release/*, staging/*, prod/*, qa]
+  pull_request:
+    branches: [master, main, dev/*, feature/*, release/*, staging/*, prod/*, qa]
 
-# env:
-#  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#  AWS_DEFAULT_REGION: "us-east-1"
+env:
+ AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+ AWS_DEFAULT_REGION: "us-east-1"
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-#       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-#       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-#       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-#       - uses: actions/checkout@v3
-#       - name: Set up Python 3.9
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: "3.9"
-#       - name: Set up Node
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: "16"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
 
-#       - name: Install Python dependencies and CDK
-#         run: |
-#           python -m pip install --upgrade pip
-#           # install your Python dependencies here
-#           npm install -g aws-cdk
-#           pip install -r requirements.txt
-#           pip install -r requirements-dev.txt
+      - name: Install Python dependencies and CDK
+        run: |
+          python -m pip install --upgrade pip
+          # install your Python dependencies here
+          npm install -g aws-cdk
+          pip install -r requirements.txt
           
-#       # - name: Deploy to AWS
-#       #   run: cdk deploy --require-approval=never --no-asset-metadata --force
-#       - name: Destroy stack
-#         run: cdk destroy --require-approval=never --no-asset-metadata --force
+      - name: Deploy to AWS
+        run: cdk deploy ApiLambdaBedrockStack --require-approval=never --no-asset-metadata --force
+        env:
+            AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: ${{ env.AWS_DEFAULT_REGION }}
+           
+    #   - name: Destroy stack
+    #     run: cdk destroy --require-approval=never --no-asset-metadata --force
