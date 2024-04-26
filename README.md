@@ -1,5 +1,6 @@
 # Detailed Roadmap: Generative AI implementation in serverless computing using AWS Bedrock, SageMaker, LangChain, and Boto3
 
+Generative AI implementation in serverless computing using AWS Bedrock, SageMaker, LangChain, and Boto3
 AWS Bedrock, SageMaker, LangChain, and Boto3 are powerful tools that allow you to build, deploy, and fine-tune generative AI models within the AWS ecosystem. Whether you're working with natural language processing, devops automation, computer vision,  or other AI tasks, these services provide the infrastructure , development toolkits and APIs you need to succeed.
 
 ## Steps

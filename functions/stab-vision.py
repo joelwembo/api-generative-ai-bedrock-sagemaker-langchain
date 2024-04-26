@@ -4,7 +4,7 @@ import base64
 import os
 
 prompt_data = """
-architecture diagram of aws bedrock in serverless computing
+marketer with a box
 
 """
 prompt_template=[{"text":prompt_data,"weight":1}]

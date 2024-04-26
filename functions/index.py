@@ -7,7 +7,7 @@ def handler(event, context):
 
     body = json.loads(event.get('body', '{}'))
     #setting defult prompt if none provided
-    prompt = body.get('prompt', 'Write a text to be posted on my social media channels about how Amazon Bedrock works')
+    prompt = body.get('prompt', 'AI tell me more about advertising in ecommerce using social media')
     
     body = json.dumps({
         'prompt': "\n\nHuman:" + prompt + "\n\nAssistant:",
