@@ -2,7 +2,7 @@ import boto3
 import json
 
 prompt_data="""
-Act as a Shakespeare and write a poem on Genertaive AI
+AI tell me more about advertising in ecommerce using social media
 """
 
 bedrock=boto3.client(service_name="bedrock-runtime")
@@ -22,6 +22,6 @@ response = bedrock.invoke_model(
     contentType="application/json",
 )
 
-response_body = json.loads(response.get("body").read())
-response_text = response_body.get("completions")[0].get("data").get("text")
+output = json.loads(response.get("body").read())
+response_text = output.get("completions")[0].get("data").get("text")
 print(response_text)

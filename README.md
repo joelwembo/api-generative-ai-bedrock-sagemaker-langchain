@@ -68,9 +68,9 @@ Follow the example below and replace `{your-api-url}` with your api url.
 
     ```
     curl -X POST \
-    https://xxxxxxx.us-east-1.amazonaws.com/prod/text_gen \
+    https://77gtvoj9lg.execute-api.us-east-1.amazonaws.com/prod/text_gen \
     -H "Content-Type: application/json" \
-    -d '{"prompt": "Who is Joel Otepa Wembo , Cloud Solutions Architect ?"}'
+    -d '{"prompt": "AI tell me about the coupon code in ecommerce website"}'
     ```
 
 
