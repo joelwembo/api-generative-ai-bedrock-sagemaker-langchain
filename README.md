@@ -25,14 +25,7 @@ Before we get into the good stuff, first we need to make sure we have the requir
 
 ## Deployment Instructions
 
-1. Create a new directory, navigate to that directory in a terminal and clone the GitHub repository:
-    ``` 
-    git clone https://github.com/aws-samples/serverless-patterns
-    ```
-1. Change directory to the pattern directory:
-    ```
-    cd serverless-patterns/apigw-lambda-bedrock-cdk-python
-    ```
+
 1. Create virtual environment for Python
     ```
     python3 -m venv .venv
@@ -41,22 +34,22 @@ Before we get into the good stuff, first we need to make sure we have the requir
     ```
     .venv\Scripts\activate.bat
     ```
-1. Install the Python required dependencies:
+2. Install the Python required dependencies:
     ```
     pip install -r requirements.txt
     ```
 
 !pip install -U boto3 langchain
 !pip install amazon-textract-textractor amazon-textract-prettyprinter pypdf Pillow
-1. Run the command below to bootstrap your account. CDK needs it to deploy
+3. Run the command below to bootstrap your account. CDK needs it to deploy
     ```
     cdk bootstrap
     ```
-1. Review the CloudFormation template the cdk generates for you stack using the following AWS CDK CLI command:
+4. Review the CloudFormation template the cdk generates for you stack using the following AWS CDK CLI command:
     ```
     cdk synth
     ```
-1. From the command line, use AWS CDK to deploy the AWS resources.
+5. From the command line, use AWS CDK to deploy the AWS resources.
     ```
     cdk deploy
     ```
