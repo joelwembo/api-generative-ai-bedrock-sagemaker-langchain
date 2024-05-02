@@ -73,12 +73,13 @@ Follow the example below and replace `{your-api-url}` with your api url.
 
 Thank you for Reading !! 🙌🏻, see you in the next article.🤘
 
-# For more information about the author ( Joel O. Wembo ) visit
 
+# For more information about the author visit
 
-- [@Author](https://www.joelotepawembo.com)
+- [@Joel O. Wembo](https://www.joelotepawembo.com)
 - [@twitter](twitter.com/joelwembo1)
 - [@linkedin](https://www.linkedin.com/in/joelotepawembo)
+
 
 
 
