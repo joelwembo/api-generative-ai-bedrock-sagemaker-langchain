@@ -3,6 +3,10 @@
 Generative AI implementation in serverless computing using AWS Bedrock, SageMaker, LangChain, and Boto3
 AWS Bedrock, SageMaker, LangChain, and Boto3 are powerful tools that allow you to build, deploy, and fine-tune generative AI models within the AWS ecosystem. Whether you're working with natural language processing, devops automation, computer vision,  or other AI tasks, these services provide the infrastructure , development toolkits and APIs you need to succeed.
 
+- [@Author](https://www.joelotepawembo.com)
+- [@twitter](twitter.com/joelwembo1)
+- [@linkedin](https://www.linkedin.com/in/joelotepawembo)
+
 ## Steps
 
 CDK will create an Api Gateway, along with a resource and a POST method. There's a AWS Lambda function that will be taking the prompt and invoking an Amazon Bedrock model (anthropic.claude-v2) synchronously. If you wish to try other models, make sure to modify the policy attached to the Lambda function and invoke the right model. 
@@ -66,6 +70,18 @@ Follow the example below and replace `{your-api-url}` with your api url.
     -H "Content-Type: application/json" \
     -d '{"prompt": "AI tell me about the coupon code in ecommerce website"}'
     ```
+
+Thank you for Reading !! 🙌🏻, see you in the next article.🤘
+
+# For more information about the author ( Joel O. Wembo ) visit
+
+
+- [@Author](https://www.joelotepawembo.com)
+- [@twitter](twitter.com/joelwembo1)
+- [@linkedin](https://www.linkedin.com/in/joelotepawembo)
+
+
+
 
 
 
